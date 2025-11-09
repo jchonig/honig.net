@@ -3,43 +3,58 @@ layout: jch
 title: My Interests
 ---
 <section class="content-section container" id="interests">
-  <div class="container text-primary text-center mb-4">
-    <h2>Interests</h2>
+  <div class="container text-center mb-4">
+    <h2 class="mb-2">Interests</h2>
     <p class="lead">Things that interest me</p>
   </div>
 
   {% for interest in site.data.interests %}
-  <div class="card border-primary mx-5 my-3 shadow-sm">
-    <!-- Card header with collapse toggle -->
-    <div class="card-header p-0" id="heading-{{ forloop.index }}">
-      <button class="btn btn-link w-100 d-flex align-items-center justify-content-center text-white fw-bold py-4" 
-              type="button" 
-              data-bs-toggle="collapse" 
-              data-bs-target="#collapse-{{ forloop.index }}" 
-              aria-expanded="false" 
-              aria-controls="collapse-{{ forloop.index }}"
-              {% if interest.Background %}
-              style="
-                background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                            url('{{ 'jch/images/' | relative_url }}{{ interest.Background }}');
-                background-size: cover; 
-                background-position: center;
-                text-shadow: 0 2px 4px rgba(0,0,0,0.7);
-              "
-              {% else %}
-              style="background-color: #0d6efd; text-shadow: 0 1px 2px rgba(0,0,0,0.5);"
-              {% endif %}
-      >
-        {{ interest.Title }}
-      </button>
+  <div class="card mx-5 my-3 shadow-sm">
+    {% if interest.Title %}
+    <!-- Header toggles collapse -->
+    <div class="card-header text-center fw-bold d-flex justify-content-between align-items-center"
+         data-bs-toggle="collapse"
+         data-bs-target="#collapse-{{ forloop.index }}"
+         aria-expanded="false"
+         aria-controls="collapse-{{ forloop.index }}"
+         style="cursor: pointer;">
+      <span>{{ interest.Title }}</span>
+      <i class="bi bi-caret-down-fill" id="caret-{{ forloop.index }}"></i>
     </div>
+    {% endif %}
 
-    <!-- Collapsible card body -->
-    <div id="collapse-{{ forloop.index }}" class="collapse">
-      <div class="card-body text-body">
+    <div class="collapse" id="collapse-{{ forloop.index }}">
+      <div class="card-body text-body p-4"
+           {% if interest.Background %}
+           style="
+             background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), 
+                         url('{{ 'jch/images/' | relative_url }}{{ interest.Background }}');
+             background-size: cover; 
+             background-position: center;
+           "
+           {% endif %}
+      >
         {{ interest.Description | markdownify }}
       </div>
     </div>
   </div>
   {% endfor %}
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  {% for interest in site.data.interests %}
+  var collapseEl{{ forloop.index }} = document.getElementById('collapse-{{ forloop.index }}');
+  var caretEl{{ forloop.index }} = document.getElementById('caret-{{ forloop.index }}');
+
+  collapseEl{{ forloop.index }}.addEventListener('show.bs.collapse', function () {
+    caretEl{{ forloop.index }}.classList.remove('bi-caret-down-fill');
+    caretEl{{ forloop.index }}.classList.add('bi-caret-up-fill');
+  });
+  collapseEl{{ forloop.index }}.addEventListener('hide.bs.collapse', function () {
+    caretEl{{ forloop.index }}.classList.remove('bi-caret-up-fill');
+    caretEl{{ forloop.index }}.classList.add('bi-caret-down-fill');
+  });
+  {% endfor %}
+});
+</script>

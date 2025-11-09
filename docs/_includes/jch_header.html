@@ -64,10 +64,16 @@
       <!-- Left/grouped links -->
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link {% if page.url contains 'jch' %}active{% endif %}" href=".">Home</a>
+	  <a class="nav-link {% if page.url == '/jch/' or page.url == '/jch/index.html' %}active{% endif %}" href=".">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link {% if page.url contains 'contact' %}active{% endif %}" href="contact.html">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if page.url contains 'interests' %}active{% endif %}" href="interests.html">Interests</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if page.url contains 'work' %}active{% endif %}" href="work.html">Work</a>
         </li>
       </ul>
 

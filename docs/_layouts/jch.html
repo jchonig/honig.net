@@ -9,7 +9,14 @@
 <body>
   {% include jch_header.html %}
   
-  <main class="container my-4">
+  <main class="container py-5"
+	{% if page.background %}
+	style="background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+               url('{{ page.background | relative_url }}');
+               background-size: cover; background-position: center;"
+	{% endif %}
+	>
+
     {{ content }}
   </main>
 
