@@ -1,0 +1,232 @@
+---
+- Title: The Things Network
+  Background: ttn_bg.jpg
+  Description: |
+    [The Things Network](https://www.thethingsnetwork.org/) is a grass
+    roots, community driven, effort to provide free access for low
+    power, low speed Internet of Things deployment in cities or other
+    regions around the world.  My contribution is working with the
+    Ithaca, NY and New York City teams to apply Configuration
+    Management to our gateways.  My
+    [Ansible](https://github.com/IthacaThings/ttn-multitech-cm)
+    control repository can do virtually all configuration of the
+    [MultiTech](https://www.multitech.net/developer/products/multiconnect-conduit-platform/)
+    Conduits including firmware upgrades.
+
+- Title: Puppet, Ansible and Configuration Management
+  Background: puppet_bg.jpg
+  Description: |
+    I'm a software engineer at heart, which means I'm lazy; I don't
+    want to do a job more than once.  This applies to system
+    administration.  I run a number of Linux (mostly Debian at this
+    time) systems and one of my least favorite tasks is making sure I
+    have configured something properly on all of them.  And I
+    especially hate having to remember everything that I need to
+    reconfigure when I install a new system or reconfigure one that
+    died.
+
+    While travelling to Beaverton, OR for work once many years ago I
+    picked up a copy of Linux Journal and read about Configuration
+    Management with Puppet.  When I got home I tried it out and was
+    hooked.  My configuration is up to over 9,000 lines of Puppet
+    manifests and Hiera configs.
+
+    One place where Puppet will not work well is my Cloud server.  I
+    don't want to share all the Puppet configuration and do not want
+    to open a VPN back to my home network.  I read an article on
+    Ansible and gave that a try.  It's a perfect fit for managing a
+    remote server.  I currently use Ansible to configure my Mac
+    (similar to Jeff Gerling's
+    [https://github.com/geerlingguy/mac-dev-playbook](https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fgeerlingguy%2Fmac-dev-playbook&sa=D&sntz=1&usg=AOvVaw3Vs4JiOnLoyqgRMsiva5VR),
+    but mine is not public). cloud servers and Raspberry Pis.
+
+- Title: E-Mail
+  Background: email_bg.png
+  Description: |
+    I mainly use Gmail because it has great SPAM filtering and makes
+    my mail available on all my devices.  For secure e-mail I use
+    [Proton Mail](https://proton.me).  I have been a heavy user of
+    the [nmh](https://www.nongnu.org/nmh/) mail system for decades and
+    a developer on the [mh-e](https://sourceforge.net/projects/mh-e/)
+    front-end for nmh in Emacs.  For large volumes of mail (i.e. at
+    work), MH-E was much more efficient.
+
+    At home I use postfix configured to send e-mail.  For years I used
+    sendmail and wrote custom configurations but I find postfix easier
+    to configure.
+
+- Title: Unix/BSD/Linux
+  Background: bsd_linux_bg.jpg
+  Description: |
+    My first exposure to Unix was a BSD port on a Gould PowerNode 9000
+    while at Clarkson University.  Back then I was a mainframe guy
+    (VM/CMS) and implementing a terminal program on MS-DOS.  Then I
+    installed Mt Xinu on a microVax to build an Internet gateway.
+    Part of the bring-up was booting into single user mode and adding
+    support for the latest disk drives.
+
+    When I moved to the Cornell Theory Center I moved headlong into
+    the Unix world, using SunOS (BSD at first and then System V based)
+    and eventually became the owner of the infamous
+    devvax.tn.cornell.edu (a DEC VAX 11/750 running BSD 4.2 and
+    eventually running BSD/OS on an i486).  That was back when you
+    built your own copy of gcc, compiling it three times just to be
+    sure it worked.  By then my life was totally on Unix/BSD.
+
+    I joined BSDi in 1995 to work as a core engineeri on BSD/OS.
+    BSD/OS was a commercial derivative of the BSD/386 port.  I had a
+    very enjoyable five years at BSDi working on many different facets
+    of the OS.  In 2001 Wind River acquired the rights to BSD/OS and
+    hired most of the engineers.  BSD/OS lived on for a few years at
+    Wind River as the Platform for Server Appliances.
+
+    After BSD/OS Wind River started Wind River Linux, an embedded
+    Linux distribution to complement their VxWorks real-time offering.
+    Eventually I converted all my BSD/OS systems to Linux, first
+    Fedora and then Ubuntu.  At one point I had half a dozen systems
+    running Ubuntu, at the time of this writing it's only three: A
+    Ubuntu desktop (which is long due for retirement), a server (Plex,
+    Nextcloud, Gogs, backups, DNS, DHCP), a low power server (running
+    UniFi Controller, M/Monit, DNS, DHCP).
+
+    My primary UI these days is macOS, primarily on an M2 Macbook Pro.
+
+- Title: Home Automation
+  Background: home_automation_bg.jpg
+  Description: |
+    I started out my home automation adventures with X-10.  The
+    biggest problem was that I wanted to control my house with Linux
+    and I had trouble finding good options.  For a while I played with
+    [MisterHouse](https://github.com/hollie/misterhouse) but
+    eventually settled on [Insteon](https://www.insteon.com/) with a
+    [Universal Devices](https://www.universal-devices.com/) ISY
+    controller, currently an ISY994i.  The ISY devices know a lot
+    about Insteon devices and simplify much of the configuration and
+    setup.  Control is local (i.e. not via the cloud) but they are
+    continually improving and adding additional functionality.
+
+    Most all lights in my house are on the Insteon network.  Most of
+    my control functions are basic, turning off lights on timers,
+    using motion detection for lights in specific rooms, programming
+    one buttons for sequences such as bed time.
+
+    I've recently added Z-Wave thermostats to most of the rooms (there
+    is one room that will be hard to wire that I have not gotten to
+    yet).  I do some day-night temperature control with those and
+    would like to do some occupancy detection to set the heat.
+
+    I wrote a use a Perl interface to the Universal Devices ISY series
+    of devices, Device::ISY.  I chose Perl because there were not any
+    easily installed SOAP libraries available on Ubuntu when I
+    started.  My assignment of the Device::ISY identifier took quite a
+    while and I got distracted from the project.  I need to move it
+    over to Github where other folks can contribute.  I personally use
+    it all the time.
+
+    I would really love to have some good occupancy detection, maybe
+    with BTLE (via my BTLE fitness tracker).
+
+    I currently have a [Home
+    Assistant](https://www.home-assistant.io/) installation running in
+    a Docker container on my server.  This is not an idea way to
+    install Home Assistant and I am going to move it to a Raspberry Pi
+    (w/external SATA SSD) soon.
+
+    I got very frustrated with the HA Z-Wave installation because
+    every time Home Assitant was restarted the Z-Wave controller
+    function was restarted.  So I bought an external Z-Wave
+    controller, the Vera Plus.  The downside of this is that the Home
+    Assistant integration is broken with respect to thermostats that
+    have different heating and cooling setpoints.  When I migrate my
+    openzwave installation to a Raspberry Pi I'll start using the beta
+    version of openzwave which runs as a separate process and
+    communicates with Home Assistant via MQTT.
+
+- Title: IP Telphony
+  Background: asterisk_bg.jpg
+  Description: |
+    I've long been interested in telephony at one point wanting to buy
+    a Panasonic Hybrid PBX, but was not willing to spend so much
+    money.  Now they are relegated to history.
+
+    Then IP Telephony happened and I learned about Asterisk.  I've
+    went through several iterations of ATA adapters and service
+    providers.  I finally settled on an Obihai Obi202 with Google
+    Voice.  This is currently not functioning as my Asterisk
+    installation went stale.  I plan to install FreePBX on a Raspberry
+    Pi soon.
+
+    In the meantime, I just use Google Voice on whatever device is
+    near me.
+
+- Title: PiAware
+  Background: piaware_bg.png
+  Description: |
+    [FlightAware](https://www.flightaware.com/) hosts a community
+    network of
+    [ADS-B](https://en.wikipedia.org/wiki/Automatic_Dependent_Surveillance%E2%80%93Broadcast)
+    receivers that track the location of aircraft around the world.
+    One option for installing these is to use a Raspberry Pi based
+    system called [PiAware](https://www.flightaware.com/adsb/piaware/)
+    which uses a [Raspberry Pi](https://www.raspberrypi.org/) and USB
+    Dongle with an external antenna to receive the aircraft location
+    information and upload it to the cloud.
+
+    To facilitate a good location for the antenna, I installed a
+    Raspberry Pi 3 B+ in a weather-tight box on the outside of my
+    house.  Power and networking are via a Power-Over-Ethernet
+    connection.  This installation uses a LovePi PoE HAT and a [Flight
+    Feeder Pro](https://www.flightaware.com/adsb/prostick/) USB stick.
+    Pictures of the installation are available in a [Flickr
+    album](https://www.flickr.com/photos/jchonig/sets/72157701624465515/).
+
+- Title: Blitzortung
+  Background: blitzortung_bg.gif
+  Description: |
+    The German term Blitzortung means "lightning detection".
+    [Blitzortung.org](https://www.blitzortung.org/en/live_lightning_maps.php)
+    is a community based installation of ligthning detectors around
+    the world.  An installation consists of a receiver and one or both
+    of an H-field (magnetic) and E-field (elelctrical) antenna.
+
+    After a few years on a waiting list, I received my kit in
+    September of 2018.  Over two years later I assembled it.  The
+    boards come mostly pre-assembled, with all the surface mount
+    devices (SMD) pre-installed.  All that is required is to solder on
+    a few larger components.
+
+    Again, I'm powering this with a POE connection.  I found a PoE to
+    USB-A female and am using that to connect to the System BLUE via a
+    USB-A to mini-USB connection and a length of sheilded Cat 5.it
+
+    Photos of my installation are available in a [Flickr
+    album](https://www.flickr.com/photos/jchonig/sets/72157717698745233/).
+    My station data is available
+    [here](https://www.lightningmaps.org/blitzortung/america/index.php?bo_page=statistics&bo_show=station&bo_sid=2872).
+  
+- Title: Docker Containers
+  Background: docker_bg.jpg
+  Description: |
+    As I've migrated my server(s) from Ubuntu 16.04 to Ubuntu 20.04,
+    I've put just about all services possible in Docker Containers.
+    Someday I plan to write up a bunch of lessons learned.
+
+    I maintain a number of docker containers that you can find on my
+    [GitHub](https://github.com/jchonig) site.
+
+- Title: WeatherFlow Tempest Weather System
+  Background: weatherflow_bg.jpg
+  Description: |
+    I've always wanted local weather monitoring.  With the caveat that it not just provide a local display and not only upload the data to a proprietary cloud.
+
+    I think I've found the solution in the [WeatherFlow Tempest
+    Weather
+    System](https://tempest.earth/tempest-home-weather-system/).
+    There seems to be an active community around this product with
+    lots of options to obtain and share the data.
+
+    You can see my station data on
+    [TempestWX](https://tempestwx.com/station/38406/) or
+    [WeatherUnderground](https://www.wunderground.com/dashboard/pws/KNYTRUMA26).
+    Pictures of the installation are in a [Flickr
+    album](https://www.flickr.com/photos/jchonig/sets/72157717739289578/).

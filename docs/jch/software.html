@@ -1,16 +1,17 @@
 ---
 layout: jch
-title: My Interests
+title: Software Projects
+background: jch/images/software_bg.jpg
 ---
-<section class="content-section container" id="interests">
+<section class="content-section container" id="software">
   <div class="container text-center mb-4">
-    <h2 class="mb-2">Interests</h2>
-    <p class="lead">Interesting things that I work on</p>
+    <h2 class="mb-2">Software</h2>
+    <p class="lead">Software and computer projects I've worked with.</p>
   </div>
 
-  {% for interest in site.data.jch_interests %}
+  {% for software in site.data.jch_software %}
   <div class="card mx-5 my-3 shadow-sm">
-    {% if interest.Title %}
+    {% if software.Title %}
     <!-- Header toggles collapse -->
     <div class="card-header text-center fw-bold d-flex justify-content-between align-items-center"
          data-bs-toggle="collapse"
@@ -18,23 +19,23 @@ title: My Interests
          aria-expanded="false"
          aria-controls="collapse-{{ forloop.index }}"
          style="cursor: pointer;">
-      <span>{{ interest.Title }}</span>
+      <span>{{ software.Title }}</span>
       <i class="bi bi-caret-down-fill" id="caret-{{ forloop.index }}"></i>
     </div>
     {% endif %}
 
     <div class="collapse" id="collapse-{{ forloop.index }}">
       <div class="card-body text-body p-4"
-           {% if interest.Background %}
+           {% if software.Background %}
            style="
              background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), 
-                         url('{{ 'jch/images/' | relative_url }}{{ interest.Background }}');
+                         url('{{ 'jch/images/' | relative_url }}{{ software.Background }}');
              background-size: cover; 
              background-position: center;
            "
            {% endif %}
       >
-        {{ interest.Description | markdownify }}
+        {{ software.Description | markdownify }}
       </div>
     </div>
   </div>
@@ -43,7 +44,7 @@ title: My Interests
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  {% for interest in site.data.jch_interests %}
+  {% for software in site.data.jch_software %}
   var collapseEl{{ forloop.index }} = document.getElementById('collapse-{{ forloop.index }}');
   var caretEl{{ forloop.index }} = document.getElementById('caret-{{ forloop.index }}');
 
