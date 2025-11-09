@@ -1,3 +1,9 @@
+#*
+*.new
+*~
+.DS_Store
+_dl/
+docs/_site/
 _site/
 .sass-cache/
 .jekyll-cache/
