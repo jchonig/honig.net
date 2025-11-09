@@ -6,5 +6,5 @@ title: Honig.net
 
 You can find members of the Honig family at
 
-+ [Jeffrey Honig](https://jch.honig.net)
++ [Jeffrey Honig](jch)
 + [Sue Honig](https://www.faceboot.com/sue.honig)
