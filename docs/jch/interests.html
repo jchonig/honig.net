@@ -1,0 +1,45 @@
+---
+layout: jch
+title: My Interests
+---
+<section class="content-section container" id="interests">
+  <div class="container text-primary text-center mb-4">
+    <h2>Interests</h2>
+    <p class="lead">Things that interest me</p>
+  </div>
+
+  {% for interest in site.data.interests %}
+  <div class="card border-primary mx-5 my-3 shadow-sm">
+    <!-- Card header with collapse toggle -->
+    <div class="card-header p-0" id="heading-{{ forloop.index }}">
+      <button class="btn btn-link w-100 d-flex align-items-center justify-content-center text-white fw-bold py-4" 
+              type="button" 
+              data-bs-toggle="collapse" 
+              data-bs-target="#collapse-{{ forloop.index }}" 
+              aria-expanded="false" 
+              aria-controls="collapse-{{ forloop.index }}"
+              {% if interest.Background %}
+              style="
+                background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                            url('{{ 'jch/images/' | relative_url }}{{ interest.Background }}');
+                background-size: cover; 
+                background-position: center;
+                text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+              "
+              {% else %}
+              style="background-color: #0d6efd; text-shadow: 0 1px 2px rgba(0,0,0,0.5);"
+              {% endif %}
+      >
+        {{ interest.Title }}
+      </button>
+    </div>
+
+    <!-- Collapsible card body -->
+    <div id="collapse-{{ forloop.index }}" class="collapse">
+      <div class="card-body text-body">
+        {{ interest.Description | markdownify }}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</section>
