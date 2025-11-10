@@ -1,11 +1,22 @@
 <!-- _includes/header.html -->
+<!-- _includes/header.html -->
 <style>
+  {% assign forest_light = "#d9ebd3" %}
+  {% assign forest_mid   = "#b9d6ac" %}
+  {% assign forest_dark  = "#6b9c5a" %}
+  {% assign forest_deep  = "#3d6b35" %}
+  {% assign forest_text  = "#2f4e28" %}
+  {% assign forest_nav1 = "#3d6b35" %}
+  {% assign forest_nav2 = "#2b5126" %}
+  {% assign forest_text_light = "#f8f9f8" %}
+  {% assign forest_white = "#ffffff" %}
+
   /* Light forest green gradient theme */
   .navbar-forest {
-    background: linear-gradient(180deg, #4f7b44 0%, #3d6b35 100%);
+    background: linear-gradient(180deg, {{ forest_nav1 }} 0%, {{ forest_nav2 }} 100%);
     position: sticky;
     top: 0;
-    z-index: 1020; /* Keeps navbar above content */
+    z-index: 1020;
   }
   .navbar-forest .navbar-brand,
   .navbar-forest .nav-link,
@@ -15,10 +26,10 @@
   .navbar-forest .nav-link:hover,
   .navbar-forest .dropdown-item:hover {
     color: #ffffff !important;
-    background-color: #2f4e28 !important;
+    background-color: {{ forest_deep }} !important;
   }
   .navbar-forest .dropdown-menu {
-    background: linear-gradient(180deg, #4f7b44 0%, #3d6b35 100%);
+    background: linear-gradient(180deg, {{ forest_nav1 }} 0%, {{ forest_nav2 }} 100%);
     border: none;
   }
   .navbar-toggler {
@@ -33,7 +44,7 @@
   .navbar-forest .dropdown-item.active {
     font-weight: 600;
     text-decoration: underline;
-    background-color: #2f4e28 !important;
+    background-color: {{ forest_deep }} !important;
     color: #ffffff !important;
   }
 
@@ -46,44 +57,35 @@
   }
 
   /* ========== Forest Card Theme ========== */
-  /* Forest card base */
   .card.card-forest {
-      --forest-light: #6b9c5a;
-      --forest-mid: #4f7b44;
-      --forest-dark: #3d6b35;
-      --forest-deep: #2f4e28;
+      --forest-light: {{ forest_light }};
+      --forest-mid:   {{ forest_mid }};
+      --forest-dark:  {{ forest_dark }};
+      --forest-deep:  {{ forest_deep }};
+      --forest-text:  {{ forest_text }};
 
       background: linear-gradient(180deg, var(--forest-mid) 0%, var(--forest-dark) 100%);
-      color: #f8f9f8;
+      color: var(--forest-text);
       border: 2px solid var(--forest-dark);
       border-radius: 0.75rem;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.2s ease;
   }
 
-  /* Hover lift */
   .card.card-forest:hover {
       transform: translateY(-4px);
       box-shadow: 0 6px 12px rgba(0,0,0,0.25);
       border-color: var(--forest-deep);
   }
 
-  /* Alternate borders */
-  .content-section .card:nth-child(odd).card-forest {
-      border-color: var(--forest-mid);
-  }
-  .content-section .card:nth-child(even).card-forest {
-      border-color: var(--forest-dark);
-  }
-
   /* Header text */
   .card-forest .card-title {
-      color: #ffffff;
+      color: var(--forest-text);
       font-weight: 600;
   }
   .card-forest .card-subtitle {
-      color: rgba(255, 255, 255, 0.85);
+      color: rgba(47, 78, 40, 0.8);
   }
 
   /* Buttons */
@@ -97,50 +99,36 @@
       background-color: #263c20;
   }
 
-  /* Header links (on dark gradient header) */
+  /* Header links */
   .card-forest .card-header a {
-      color: #d4f0d1;
+      color: var(--forest-text);
+      text-decoration: underline;
   }
   .card-forest .card-header a:hover {
-      color: #ffffff;
+      color: #1f341b;
   }
 
-  /* -------------------- */
-  /* Card body text over images only when a background image exists */
+  /* Image cards with overlay */
   .card-forest .card-body[style*="background"] {
-      position: relative; /* needed for overlay */
-      color: #2f4e28;
+      position: relative;
+      color: var(--forest-text);
       transition: color 0.2s ease;
   }
 
-  /* Overlay behind text for contrast, only for image cards */
   .card-forest .card-body[style*="background"]::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(255, 255, 255, 0.85); /* default semi-transparent overlay */
+      background: rgba(255, 255, 255, 0.85);
       z-index: 0;
-      transition: background 0.3s ease; /* fade on hover */
+      transition: background 0.3s ease;
   }
 
-  /* Text and links above overlay */
   .card-forest .card-body[style*="background"] * {
       position: relative;
       z-index: 1;
   }
 
-  /* Links inside card body with background image */
-  .card-forest .card-body[style*="background"] a {
-      color: #2f4e28;
-      text-decoration: underline;
-      font-weight: 500;
-      transition: color 0.2s ease;
-  }
-  .card-forest .card-body[style*="background"] a:hover {
-      color: #1f341b;
-  }
-
-  /* Fade overlay slightly on hover to reveal more of background image */
   .card-forest .card-body[style*="background"]:hover::before {
       background: rgba(255, 255, 255, 0.6);
   }
@@ -149,18 +137,18 @@
   .content-section .card:nth-child(odd) .card-header.card-forest {
       background: linear-gradient(180deg, var(--forest-light) 0%, var(--forest-mid) 100%);
   }
-
   .content-section .card:nth-child(even) .card-header.card-forest {
       background: linear-gradient(180deg, var(--forest-mid) 0%, var(--forest-dark) 100%);
   }
 
-  /* Alternate card-body background for cards WITHOUT a background image */
+  /* Much lighter backgrounds for non-image cards */
   .content-section .card:nth-child(odd) .card-body:not([style*="background"]) {
-      background: linear-gradient(180deg, var(--forest-light) 0%, var(--forest-mid) 100%);
+      background: linear-gradient(180deg, #f4faf2 0%, #e8f5e4 100%);
+      color: var(--forest-text);
   }
-
   .content-section .card:nth-child(even) .card-body:not([style*="background"]) {
-      background: linear-gradient(180deg, var(--forest-mid) 0%, var(--forest-dark) 100%);
+      background: linear-gradient(180deg, #f1f8ef 0%, #dcefd8 100%);
+      color: var(--forest-text);
   }
 
   .card-forest-light-border {
