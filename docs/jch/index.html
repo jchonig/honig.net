@@ -4,25 +4,109 @@ title: Jeffrey C Honig
 permalink: /jch/
 ---
 
+<style>
+  /* Home page cards */
+  .home-card {
+      background-color: rgba(232, 247, 232, 0.3); /* light green, semi-transparent */
+      border: 2px solid #4f7b44; /* medium green border */
+      border-radius: 0.75rem;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.2s ease, background-color 0.2s ease;
+  }
+
+  .home-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      border-color: #6b9c5a; /* lighter green on hover */
+  }
+
+  /* Alternate border colors for multiple cards */
+  .home-card:nth-child(odd) {
+      border-color: #4f7b44; /* medium green */
+  }
+  .home-card:nth-child(even) {
+      border-color: #6b9c5a; /* light green */
+  }
+
+  /* Hero image container with forest border and hover effect */
+  .hero-container {
+      border: 3px solid #4f7b44; /* forest green border */
+      border-radius: 0.5rem;
+      overflow: hidden;
+      transition: border-color 0.3s ease;
+  }
+
+  .hero-container:hover {
+      border-color: #8fc88f; /* lighter green on hover */
+  }
+
+  .hero-bg {
+      background-size: cover;
+      background-position: center;
+      height: 250px;
+      position: relative;
+      transition: transform 0.3s ease;
+  }
+
+  .hero-container:hover .hero-bg {
+      transform: scale(1.02); /* subtle zoom effect on hover */
+  }
+
+  .hero-overlay {
+      background-color: rgba(0,0,0,0.4);
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+  }
+
+  .hero-container:hover .hero-overlay {
+      background-color: rgba(0,0,0,0.3); /* lighten overlay slightly */
+  }
+
+  /* Hero header text with hover effect */
+  .hero-overlay h1 {
+      color: rgba(255,255,255,0.9); /* almost white */
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+
+  .hero-container:hover .hero-overlay h1 {
+      color: #ffffff; /* fully white on hover */
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+  }
+
+</style>
+
 <main class="container my-5">
 
-  <!-- Hero / Title with background image -->
+  <!-- Hero / Title with background image and forest border -->
   <section class="position-relative text-center mb-5">
-    <div class="bg-image" style="background-image: url('images/245GLT.jpg'); background-size: cover; background-position: center; height: 250px;">
-      <div class="d-flex h-100 align-items-center justify-content-center" style="background-color: rgba(0,0,0,0.4);">
-        <h1 class="text-white display-4 fw-bold">Jeffrey C Honig</h1>
+    <div class="hero-container">
+      <div class="hero-bg" style="background-image: url('images/245GLT.jpg');">
+        <div class="hero-overlay">
+          <h1 class="display-4 fw-bold">Jeffrey C Honig</h1>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Main content -->
-  <section class="mb-4">
+  <!-- Main content cards -->
+  <div class="home-card">
     <p>
       I am a retired Linux/Cloud System Architect and live on a small
-      farm in the Finger Lakes area of Central NY, USA and like to
-      play with tractors and old farm equipment, Volvos and Ham Radio
-      while my wife plays with her herding dogs.
+      farm in the Finger Lakes area of Central NY, USA. I like to
+      bicycle, lift weights, play with tractors and old farm
+      equipment, Volvos, and Ham Radio while my wife plays with her
+      herding dogs.
     </p>
-  </section>
+    <p>
+      Select pages with the headers for more information.
+    </p>
+  </div>
 
 </main>
