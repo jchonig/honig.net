@@ -46,58 +46,125 @@
   }
 
   /* ========== Forest Card Theme ========== */
-  .card-forest {
-    background: linear-gradient(180deg, #5b8b4b 0%, #3d6b35 100%);
-    color: #f8f9f8;
-    border: none;
-    border-radius: 0.75rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  /* Forest card base */
+  .card.card-forest {
+      --forest-light: #6b9c5a;
+      --forest-mid: #4f7b44;
+      --forest-dark: #3d6b35;
+      --forest-deep: #2f4e28;
+
+      background: linear-gradient(180deg, var(--forest-mid) 0%, var(--forest-dark) 100%);
+      color: #f8f9f8;
+      border: 2px solid var(--forest-dark);
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.2s ease;
   }
 
-  .card-forest:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  /* Hover lift */
+  .card.card-forest:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+      border-color: var(--forest-deep);
   }
 
+  /* Alternate borders */
+  .content-section .card:nth-child(odd).card-forest {
+      border-color: var(--forest-mid);
+  }
+  .content-section .card:nth-child(even).card-forest {
+      border-color: var(--forest-dark);
+  }
+
+  /* Header text */
   .card-forest .card-title {
-    color: #ffffff;
-    font-weight: 600;
+      color: #ffffff;
+      font-weight: 600;
   }
-
   .card-forest .card-subtitle {
-    color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.85);
   }
 
-  .card-forest .card-text {
-    color: #f0f3ef;
-  }
-
-  .card-forest a {
-    color: #d4f0d1;
-    text-decoration: underline;
-  }
-
-  .card-forest a:hover {
-    color: #ffffff;
-  }
-
+  /* Buttons */
   .card-forest .btn {
-    background-color: #2f4e28;
-    color: #ffffff;
-    border: none;
+      background-color: var(--forest-deep);
+      color: #ffffff;
+      border: none;
+      transition: background-color 0.15s ease;
   }
-
   .card-forest .btn:hover {
-    background-color: #284222;
+      background-color: #263c20;
   }
 
-  .card-forest-light {
-    background: linear-gradient(180deg, #6b9c5a 0%, #4f7b44 100%);
+  /* Header links (on dark gradient header) */
+  .card-forest .card-header a {
+      color: #d4f0d1;
+  }
+  .card-forest .card-header a:hover {
+      color: #ffffff;
   }
 
-  .card-forest-dark {
-    background: linear-gradient(180deg, #3d6b35 0%, #2f4e28 100%);
+  /* -------------------- */
+  /* Card body text over images only when a background image exists */
+  .card-forest .card-body[style*="background"] {
+      position: relative; /* needed for overlay */
+      color: #2f4e28;
+      transition: color 0.2s ease;
+  }
+
+  /* Overlay behind text for contrast, only for image cards */
+  .card-forest .card-body[style*="background"]::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.85); /* default semi-transparent overlay */
+      z-index: 0;
+      transition: background 0.3s ease; /* fade on hover */
+  }
+
+  /* Text and links above overlay */
+  .card-forest .card-body[style*="background"] * {
+      position: relative;
+      z-index: 1;
+  }
+
+  /* Links inside card body with background image */
+  .card-forest .card-body[style*="background"] a {
+      color: #2f4e28;
+      text-decoration: underline;
+      font-weight: 500;
+      transition: color 0.2s ease;
+  }
+  .card-forest .card-body[style*="background"] a:hover {
+      color: #1f341b;
+  }
+
+  /* Fade overlay slightly on hover to reveal more of background image */
+  .card-forest .card-body[style*="background"]:hover::before {
+      background: rgba(255, 255, 255, 0.6);
+  }
+
+  /* Alternating header gradients */
+  .content-section .card:nth-child(odd) .card-header.card-forest {
+      background: linear-gradient(180deg, var(--forest-light) 0%, var(--forest-mid) 100%);
+  }
+
+  .content-section .card:nth-child(even) .card-header.card-forest {
+      background: linear-gradient(180deg, var(--forest-mid) 0%, var(--forest-dark) 100%);
+  }
+
+  /* Alternate card-body background for cards WITHOUT a background image */
+  .content-section .card:nth-child(odd) .card-body:not([style*="background"]) {
+      background: linear-gradient(180deg, var(--forest-light) 0%, var(--forest-mid) 100%);
+  }
+
+  .content-section .card:nth-child(even) .card-body:not([style*="background"]) {
+      background: linear-gradient(180deg, var(--forest-mid) 0%, var(--forest-dark) 100%);
+  }
+
+  .card-forest-light-border {
+      border: 2px solid var(--forest-mid);
   }
 </style>
 

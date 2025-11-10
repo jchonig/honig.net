@@ -10,12 +10,10 @@ background: jch/images/interests_bg.jpg
   </div>
 
   {% for interest in site.data.jch_interests %}
-  {% assign alt = forloop.index0 | modulo: 2 %}
-  <div class="card mx-5 my-3 shadow-sm">
+  <div class="card card-forest mx-5 my-3 shadow-sm">
     {% if interest.Title %}
     <!-- Header toggles collapse -->
     <div class="card-header card-forest
-		{% if alt == 0 %}card-forest-light{% else %}card-forest-dark{% endif %}
 		text-center fw-bold d-flex justify-content-between align-items-center"
          data-bs-toggle="collapse"
          data-bs-target="#collapse-{{ forloop.index }}"
