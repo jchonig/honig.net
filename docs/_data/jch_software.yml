@@ -37,7 +37,7 @@
     Ansible and gave that a try.  It's a perfect fit for managing a
     remote server.  I currently use Ansible to configure my Mac
     (similar to Jeff Gerling's
-    [https://github.com/geerlingguy/mac-dev-playbook](https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fgeerlingguy%2Fmac-dev-playbook&sa=D&sntz=1&usg=AOvVaw3Vs4JiOnLoyqgRMsiva5VR),
+    [mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook)),
     but mine is not public). cloud servers and Raspberry Pis.
 
 - Title: E-Mail
