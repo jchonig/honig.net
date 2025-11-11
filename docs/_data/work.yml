@@ -13,12 +13,12 @@
     and encourage each individual and team to contribute their best
     work toward a common goal.
 
-- Title: Big Iron
+- Title: Clarkson University
   Description: |
     ![IBM 360/65, image courtesy of Computer History Museum](images/IBM_360_65.jpg)
 
     I started my career doing Systems Programming on an [IBM
-    360/65](https://medium.com/r/?url=https%3A%2F%2Fwww.wikiwand.com%2Fen%2FIBM_System%2F360_Model_65)
+    360/65](https://www.wikiwand.com/en/IBM_System/360_Model_65)
     at Clarkson College (now [Clarkson
     University](http://www.clarkson.edu)) in Potsdam, NY. Systems
     programming was what we called ystem administration those
@@ -33,16 +33,16 @@
     Time Sharing computing was the buzzword of the day. That's where a
     mainframe would support many interactive users editing jobs to
     submit. This was done with the
-    [ROSCOE](https://medium.com/r/?url=https%3A%2F%2Fwww.wikiwand.com%2Fen%2FApplied_Data_Research)
+    [ROSCOE](https://www.wikiwand.com/en/Applied_Data_Research)
     system, which was really just another batch job that never
     finished. It controlled a lab full of
-    [ADM-3A](https://medium.com/r/?url=https%3A%2F%2Fwww.wikiwand.com%2Fen%2FADM-3A%5D%5BADM-3A)
+    [ADM-3A](https://www.wikiwand.com/en/ADM-3A)
     terminals, most of which were not equipped with lowercase
     chips. BACK THEN ALL CAPS WAS THE NORM AND WASN'T CONSIDERED
     SHOUTING.
 
-- Title: Educational Resources Center
-  Description: |
+    #### Educational Resources Center
+
     After I was at at Clarkson for a few years they built a new
     building combining information technologies, the library, media
     production and computing center into a new building on the hill
@@ -51,9 +51,9 @@
 
     As part of this move research was required into a new computing
     platform. The major contenders were the [IBM
-    4341](https://medium.com/r/?url=https%3A%2F%2Fwww.wikiwand.com%2Fen%2FIBM_4300%23%2FIBM_4341)
+    4341](https://www.wikiwand.com/en/IBM_4300%23/IBM_4341)
     and a [UNIVAC
-    1100](https://medium.com/r/?url=https%3A%2F%2Fwww.wikiwand.com%2Fen%2FUNIVAC_1100%2F2200_series%23%2F1110)
+    1100](https://www.wikiwand.com/en/UNIVAC_1100/2200_series%23/1110)
     series. The IBM 4341 won out, primarily because of the legacy
     administrative computing systems dependent on IBM software. In the
     long run this was a better decision, the IBM computing platform
@@ -63,8 +63,7 @@
     a hypervisor like today's VMWare ESX. Under that we ran OS/VS1 to
     continue to process legacy batch jobs and provided more
     interactive computing via the [McGill University System for
-    Interactive Computing
-    (MUSIC)](https://medium.com/r/?url=https%3A%2F%2Fwww.wikiwand.com%2Fen%2FMUSIC%2FSP)
+    Interactive Computing](https://www.wikiwand.com/en/MUSIC/SP) (MUSIC)
     a timesharing system written in FORTRAN and designed to run under
     VM/370.
 
@@ -74,13 +73,13 @@
     spent many weeks alone in the new building to get the system
     running in time.
 
-- Title: System Architecting
-  Description: |
+    #### System Architecting
+
     As my career at Clarkson progressed I became more involved in
     architecting solutions to computing challenges at the
     University. Some of these included:
 
-    ###$# Academic Computing
+    ##### Academic Computing
 
     ![VAX 11/780](images/VAX11_780.jpg){: width="75%" height="auto"}
 
@@ -127,7 +126,7 @@
 
     Clarkson's first foray into the PC was the Zenith Z-100 running
     the
-    [Z-DOS](https://medium.com/r/?url=https%3A%2F%2Fwww.wikiwand.com%2Fen%2FZ-DOS)
+    [Z-DOS](https://www.wikiwand.com/en/Z-DOS)
     version of MS-DOS; the school became the first college in the
     nation to distribute machines to every incoming freshman in the
     Fall of 1983. It was very similar to, but slightly different from
@@ -148,7 +147,7 @@
 
     Another big thing in the 80s was networking. Clarkson first
     connected to
-    [BITNET](https://medium.com/r/?url=https%3A%2F%2Fwww.wikiwand.com%2Fen%2FBITNET),
+    [BITNET](https://www.wikiwand.com/en/BITNET),
     an educational network of mostly IBM mainframes. BITNET allowed
     e-mail and mailing lists as well as remote job submission. It even
     had support for instant messaging and functioned as an early
@@ -183,14 +182,16 @@
     team. This application generated host tables that were made
     available for download in various formats.
 
-- Title: Cornell Theory Center
+- Title: Cornell University
   Description: |
+    #### Cornell Theory Center
+
     ![Image courtesy Wikipedia](images/NSFNet.png){: width="75%" height="auto"}
 
     My experience with the Internet, Unix and software development
     landed me a job at the Cornell University Theory Center in Ithaca,
     NY to help run phase I of the
-    [NFSNET](https://medium.com/r/?url=https%3A%2F%2Fwww.wikiwand.com%2Fen%2FNational_Science_Foundation_Network). There
+    [NFSNET](https://www.wikiwand.com/en/National_Science_Foundation_Network). There
     I became the lead programmer on the Gated project. Gated was an
     Open Source routing daemon used on the Unix hosts that formed the
     NSFNET and by several routing manufacturers.
@@ -260,7 +261,7 @@
 - Title: Wind River Systems, Inc
   Description: |
     BSDi was acquired by [Wind River Systems,
-    Inc](https://medium.com/r/?url=http%3A%2F%2Fwww.windriver.com), an
+    Inc](https://www.windriver.com), an
     embedded operating systems company whose primary product is
     VxWorks, a real-time OS. Wind River realized that they needed to
     expand their portfolio with a general purpose embedded Operating
@@ -278,7 +279,7 @@
     would keep in touch with my co-workers, even calling them up on a
     phone to actually talk. This transition was nothing like that in
     the recent [Dilbert story
-    arc](https://medium.com/r/?url=http%3A%2F%2Fdilbert.com%2Fstrip%2F2017-02-11).
+    arc](https://dilbert.com/strip/2017-02-11).
 
     ##### Board Support Packages
 
@@ -298,11 +299,11 @@
 
     As an Engineering Manager I learned to dislike the [Waterfall
     model of Project
-    Management](https://medium.com/r/?url=https%3A%2F%2Fwww.wikiwand.com%2Fen%2FWaterfall_model). The
+    Management](https://www.wikiwand.com/en/Waterfall_model). The
     up-front planning of the Waterfall model does not adapt well to
     complicated software projects. The Wind River Linux team was one
     of the first to embrace the [Agile model of Project
-    Management](https://medium.com/r/?url=https%3A%2F%2Fwww.wikiwand.com%2Fen%2FAgile_software_development). I
+    Management](https://www.wikiwand.com/en/Agile_software_development). I
     helped lead our transition and we managed to apply it quite
     effectively despite having widely distributed teams. When I left
     Wind River I was managing a few Agile teams as well as the roll-up
