@@ -29,9 +29,9 @@ background: jch/images/interests_bg.jpg
       <div class="card-body text-body p-4"
            {% if interest.Background %}
            style="
-             background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), 
+             background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
                          url('{{ 'jch/images/' | relative_url }}{{ interest.Background }}');
-             background-size: cover; 
+             background-size: cover;
              background-position: center;
            "
            {% endif %}
