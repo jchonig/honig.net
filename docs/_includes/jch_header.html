@@ -184,14 +184,13 @@
      opacity: 1;
  }
 
- /* Highlight the link */
+ /* Base link */
  a.external-link-flickr {
-     position: relative;        /* required for ::before */
      text-decoration: underline;
      color: #0066cc;
+     position: relative;
  }
 
- /* External link arrow */
  a.external-link-flickr::after {
      content: "↗";
      font-size: 0.8em;
@@ -200,12 +199,10 @@
      opacity: 0.7;
  }
 
- /* Hover preview */
- a.external-link-flickr::before {
-     content: "";
-     position: absolute;
-     top: 1.5em;
-     left: 0;
+ /* Floating preview box */
+ #flickr-hover-preview {
+     position: fixed;
+     display: none;
      width: 280px;
      height: 180px;
      background-size: cover;
@@ -213,16 +210,10 @@
      border: 1px solid rgba(0,0,0,0.2);
      border-radius: 0.5em;
      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+     z-index: 9999;
+     pointer-events: none;
+     transition: opacity 0.2s ease-in-out;
      opacity: 0;
-     pointer-events: none;      /* ensures link is clickable */
-     transition: opacity 0.25s ease-in-out;
-     z-index: 10;
-     background-image: var(--flickr-preview); /* dynamic from JS */
- }
-
- /* Show preview on hover */
- a.external-link-flickr:hover::before {
-     opacity: 1;
  }
 </style>
 

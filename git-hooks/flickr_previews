@@ -31,7 +31,8 @@ def init_logging(debug=False, verbose=False):
 # Regex for Flickr links
 # -----------------------------
 FLICKR_LINK_RE = re.compile(
-    r"https?://(?:www\.flickr\.com|flic\.kr)/(p|s|gp)/([A-Za-z0-9]+)"
+    r"https?://(?:www\.flickr\.com|flic\.kr)/\s*(p|s|gp)/\s*([A-Za-z0-9]+)",
+    re.IGNORECASE | re.DOTALL
 )
 
 # -----------------------------
@@ -57,7 +58,7 @@ def get_flickr_keys(files):
     private_links = []
     for file_path in files:
         with open(file_path, "r", encoding="utf-8") as f:
-            content = f.read()
+            content = f.read().replace("\n", "")
             for match in FLICKR_LINK_RE.findall(content):
                 type_, key = match
                 if type_ == "gp":

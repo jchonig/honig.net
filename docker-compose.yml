@@ -25,8 +25,8 @@ services:
     develop:
       watch:
         - action: restart
-          path: ./build
+          path: ./build/
         - action: restart
-          path: ./git-hooks
+          path: ./git-hooks/
         - action: restart
           path: ./docker-compose.yaml
