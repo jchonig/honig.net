@@ -1,4 +1,3 @@
----
 services:
   web:
     build: build
@@ -7,4 +6,13 @@ services:
     ports:
       - "4000:4000"
     container_name: honig.net
-...
+    command: jekyll serve --watch --drafts --incremental --host 0.0.0.0
+
+  watcher:
+    image: python:3-alpine
+    volumes:
+      - ./docs:/src/site
+      - ./build:/build:ro
+      - ./git-hooks:/git-hooks
+    container_name: honig_watcher
+    command: "/build/watch.sh"

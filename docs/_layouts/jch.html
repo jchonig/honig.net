@@ -51,22 +51,25 @@
        });
    });
 
-   document.addEventListener('DOMContentLoaded', async () => {
-       const links = document.querySelectorAll('a.external-link-flickr');
+   document.addEventListener("DOMContentLoaded", () => {
+       document.querySelectorAll('a.external-link-flickr').forEach(link => {
+           // Match /p/ (photo) or /s/ (album)
+           const match = link.href.match(/https?:\/\/(?:www\.flickr\.com|flic\.kr)\/(p|s)\/([A-Za-z0-9]+)/);
+           if(match) {
+               const type = match[1];  // 'p' or 's'
+               const key = match[2];
 
-       for (const link of links) {
-	   const href = link.href;
-	   try {
-	       const res = await fetch(href, { mode: 'cors' });
-	       const html = await res.text();
-	       const match = html.match(/<meta property="og:image" content="([^"]+)"/);
-	       if (match) {
-		   link.style.setProperty('--preview-url', `url(${match[1]})`);
-	       }
-	   } catch (err) {
-	       console.warn("Couldn't fetch Flickr preview for:", href);
-	   }
-       }
+               // Relative path from page
+               const previewPath = `/images/flickr-previews/${key}.jpg`;
+
+               link.style.setProperty('--flickr-preview', `url('${previewPath}')`);
+               link.style.position = 'relative';
+
+               // External link behavior
+               link.setAttribute('target', '_blank');
+               link.setAttribute('rel', 'noopener noreferrer');
+           }
+       });
    });
   </script>
 

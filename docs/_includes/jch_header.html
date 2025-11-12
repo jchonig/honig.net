@@ -184,35 +184,14 @@
      opacity: 1;
  }
 
- /* --- Image Preview Layer --- */
- a.external-link-preview::before {
-     content: "";
-     position: absolute;
-     top: 1.5em;
-     left: 0;
-     width: 280px;
-     height: 180px;
-     background-size: cover;
-     background-position: center;
-     background-repeat: no-repeat;
-     border: 1px solid rgba(0,0,0,0.2);
-     border-radius: 0.5em;
-     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-     opacity: 0;
-     pointer-events: none;
-     transition: opacity 0.25s ease-in-out;
-     z-index: 10;
-     background-image: var(--preview-url);
- }
-
- /* Fade the preview in when hovering */
- a.external-link-preview:hover::before {
-     opacity: 1;
- }
-
+ /* Highlight the link */
  a.external-link-flickr {
-     position: relative;
+     position: relative;        /* required for ::before */
+     text-decoration: underline;
+     color: #0066cc;
  }
+
+ /* External link arrow */
  a.external-link-flickr::after {
      content: "↗";
      font-size: 0.8em;
@@ -220,6 +199,8 @@
      vertical-align: text-top;
      opacity: 0.7;
  }
+
+ /* Hover preview */
  a.external-link-flickr::before {
      content: "";
      position: absolute;
@@ -233,14 +214,13 @@
      border-radius: 0.5em;
      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
      opacity: 0;
-     pointer-events: none;
+     pointer-events: none;      /* ensures link is clickable */
      transition: opacity 0.25s ease-in-out;
      z-index: 10;
-     /* Use local downloaded images by key */
-     background-image: url('_images/flickr-previews/2s8QRD.jpg'); /* will update dynamically below */
+     background-image: var(--flickr-preview); /* dynamic from JS */
  }
 
- /* Hover to show */
+ /* Show preview on hover */
  a.external-link-flickr:hover::before {
      opacity: 1;
  }
