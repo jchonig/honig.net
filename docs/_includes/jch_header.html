@@ -160,6 +160,90 @@
      margin-left: 0.25em;
      font-size: 0.9em;
  }
+
+ /* Base link style */
+ a.external-link-preview {
+     position: relative;
+     text-decoration: none;
+     color: var(--bs-link-color, #0d6efd);
+     cursor: zoom-in;
+ }
+
+ /* External link icon */
+ a.external-link-preview::after {
+     content: "↗";
+     font-size: 0.8em;
+     margin-left: 0.2em;
+     vertical-align: text-top;
+     opacity: 0.7;
+     transition: opacity 0.2s ease;
+ }
+
+ /* Light hover effect on the icon */
+ a.external-link-preview:hover::after {
+     opacity: 1;
+ }
+
+ /* --- Image Preview Layer --- */
+ a.external-link-preview::before {
+     content: "";
+     position: absolute;
+     top: 1.5em;
+     left: 0;
+     width: 280px;
+     height: 180px;
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     border: 1px solid rgba(0,0,0,0.2);
+     border-radius: 0.5em;
+     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+     opacity: 0;
+     pointer-events: none;
+     transition: opacity 0.25s ease-in-out;
+     z-index: 10;
+     background-image: var(--preview-url);
+ }
+
+ /* Fade the preview in when hovering */
+ a.external-link-preview:hover::before {
+     opacity: 1;
+ }
+
+ a.external-link-flickr {
+     position: relative;
+ }
+ a.external-link-flickr::after {
+     content: "↗";
+     font-size: 0.8em;
+     margin-left: 0.2em;
+     vertical-align: text-top;
+     opacity: 0.7;
+ }
+ a.external-link-flickr::before {
+     content: "";
+     position: absolute;
+     top: 1.5em;
+     left: 0;
+     width: 280px;
+     height: 180px;
+     background-size: cover;
+     background-position: center;
+     border: 1px solid rgba(0,0,0,0.2);
+     border-radius: 0.5em;
+     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+     opacity: 0;
+     pointer-events: none;
+     transition: opacity 0.25s ease-in-out;
+     z-index: 10;
+     /* Use local downloaded images by key */
+     background-image: url('_images/flickr-previews/2s8QRD.jpg'); /* will update dynamically below */
+ }
+
+ /* Hover to show */
+ a.external-link-flickr:hover::before {
+     opacity: 1;
+ }
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-forest shadow-sm">

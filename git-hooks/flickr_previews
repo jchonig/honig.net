@@ -1,0 +1,98 @@
+#!/usr/bin/env python3
+import os
+import re
+import requests
+from pathlib import Path
+
+# -----------------------------
+# Configuration
+# -----------------------------
+IMAGE_DIR = Path("_images/flickr-previews")
+IMAGE_DIR.mkdir(parents=True, exist_ok=True)
+
+# Regex to find Flickr short links with .external-link-flickr class
+# Example: [Volvo](https://flic.kr/p/2s8QRD){: .external-link-flickr}
+FLICKR_LINK_RE = re.compile(
+    r"https://flic\.kr/p/([A-Za-z0-9]+).*?\.external-link-flickr"
+)
+
+# -----------------------------
+# Collect all keys referenced in files
+# -----------------------------
+def get_flickr_keys(files):
+    keys = set()
+    for file_path in files:
+        with open(file_path, "r", encoding="utf-8") as f:
+            content = f.read()
+            matches = FLICKR_LINK_RE.findall(content)
+            keys.update(matches)
+    return keys
+
+# -----------------------------
+# Find all Markdown/YAML files
+# -----------------------------
+def find_files():
+    md_files = list(Path(".").rglob("*.md"))
+    yml_files = list(Path("_data").rglob("*.yml"))
+    return md_files + yml_files
+
+# -----------------------------
+# Build Flickr static image URL from key
+# Uses standard Flickr static URL pattern
+# https://live.staticflickr.com/{server}/{id}_{secret}_q.jpg
+# We'll use Flickr oEmbed API to resolve key → image URL
+# -----------------------------
+def get_preview_url(flickr_key):
+    """Use Flickr oEmbed API to get image thumbnail URL"""
+    oembed_url = f"https://www.flickr.com/services/oembed?url=https://flic.kr/p/{flickr_key}&format=json"
+    try:
+        r = requests.get(oembed_url, timeout=10)
+        r.raise_for_status()
+        data = r.json()
+        return data["url"]  # typically small thumbnail
+    except Exception as e:
+        print(f"⚠️  Failed to fetch preview for {flickr_key}: {e}")
+        return None
+
+# -----------------------------
+# Download the image
+# -----------------------------
+def download_image(url, path: Path):
+    try:
+        r = requests.get(url, timeout=10)
+        r.raise_for_status()
+        path.write_bytes(r.content)
+        print(f"✅ Downloaded: {path}")
+    except Exception as e:
+        print(f"⚠️ Failed to download {url}: {e}")
+
+# -----------------------------
+# Cleanup old images
+# -----------------------------
+def cleanup_images(valid_keys):
+    for f in IMAGE_DIR.glob("*"):
+        if f.stem not in valid_keys:
+            f.unlink()
+            print(f"🗑️ Removed old preview: {f}")
+
+# -----------------------------
+# Main
+# -----------------------------
+def main():
+    files = find_files()
+    keys = get_flickr_keys(files)
+    print(f"Found {len(keys)} Flickr keys.")
+
+    for key in keys:
+        img_path = IMAGE_DIR / f"{key}.jpg"
+        if img_path.exists():
+            print(f"⏭ Already exists: {img_path}")
+            continue
+        url = get_preview_url(key)
+        if url:
+            download_image(url, img_path)
+
+    cleanup_images(keys)
+
+if __name__ == "__main__":
+    main()

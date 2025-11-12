@@ -36,6 +36,38 @@
 	   } catch(e){ /* defensive */ }
        });
    });
+
+   document.addEventListener('DOMContentLoaded', function () {
+       document.querySelectorAll('a.external-link-preview').forEach(link => {
+	   const href = link.getAttribute('href');
+	   // If the href points to an image, use it directly
+	   if (/\.(jpe?g|png|gif|webp|avif|svg)$/i.test(href)) {
+	       link.style.setProperty('--preview-url', `url(${href})`);
+	   } else {
+	       // Optional: You can add logic here to map non-image URLs
+	       // (e.g., Flickr, YouTube) to preview thumbnails.
+	       link.style.setProperty('--preview-url', `none`);
+	   }
+       });
+   });
+
+   document.addEventListener('DOMContentLoaded', async () => {
+       const links = document.querySelectorAll('a.external-link-flickr');
+
+       for (const link of links) {
+	   const href = link.href;
+	   try {
+	       const res = await fetch(href, { mode: 'cors' });
+	       const html = await res.text();
+	       const match = html.match(/<meta property="og:image" content="([^"]+)"/);
+	       if (match) {
+		   link.style.setProperty('--preview-url', `url(${match[1]})`);
+	       }
+	   } catch (err) {
+	       console.warn("Couldn't fetch Flickr preview for:", href);
+	   }
+       }
+   });
   </script>
 
 </body>
