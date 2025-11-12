@@ -7,6 +7,12 @@ services:
       - "4000:4000"
     container_name: honig.net
     command: jekyll serve --watch --drafts --incremental --host 0.0.0.0
+    develop:
+      watch:
+        - action: restart
+          path: ./build
+        - action: restart
+          path: ./docker-compose.yaml
 
   watcher:
     image: python:3-alpine
@@ -16,3 +22,11 @@ services:
       - ./git-hooks:/git-hooks
     container_name: honig_watcher
     command: "/build/watch.sh"
+    develop:
+      watch:
+        - action: restart
+          path: ./build
+        - action: restart
+          path: ./git-hooks
+        - action: restart
+          path: ./docker-compose.yaml

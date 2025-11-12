@@ -25,16 +25,16 @@ else
     exit 1
 fi
 
-python3 -m pip install -q requests pyyaml
+python3 -m pip install -q requests pyyaml --quiet
 
 echo "Starting inotify watcher on $ROOT_DIR (ignoring: $IGNORE_DIRS)..."
 
-"${FLICKR_SCRIPT}" -v
+"${FLICKR_SCRIPT}" -v --root-dir ${ROOT_DIR}
 
 # Infinite loop to restart watcher if it fails
 while true; do
     # inotifywait: recursively watch, quiet, trigger on create/modify/move/delete
-    inotifywait -r -e modify,create,delete,moved_to,moved_from \
+    inotifywait -r -q -e modify,create,delete,moved_to,moved_from \
         --exclude "$EXCLUDE_PATTERN" \
         --format '%w%f' "$ROOT_DIR" \
         | while read FILE; do
@@ -42,7 +42,7 @@ while true; do
                 *.md|*.html|*.yml)
                     echo "[INFO] Detected change: $FILE"
                     # Run the Flickr preview script in verbose mode
-                    "$FLICKR_SCRIPT" -v
+                    "${FLICKR_SCRIPT}" -v --root-dir ${ROOT_DIR}
                     ;;
             esac
         done
