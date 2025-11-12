@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-forest shadow-sm">
+    <div class="container-fluid">
+	<!-- Brand with favicon -->
+	<a class="navbar-brand fw-semibold d-flex align-items-center" href=".">
+	    <img src="../favicon.ico" alt="Honig.net logo">
+	    Jeffrey C Honig
+	</a>
+
+	<!-- Toggle for mobile -->
+	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	</button>
+
+	<!-- Navbar links -->
+	<div class="collapse navbar-collapse" id="navbarMain">
+	    <!-- Left/grouped links -->
+	    <ul class="navbar-nav">
+		<li class="nav-item">
+		    <a class="nav-link {% if page.url contains 'contact' %}active{% endif %}" href="contact.html">Contact</a>
+		</li>
+		<li class="nav-item">
+		    <a class="nav-link {% if page.url contains 'interests' %}active{% endif %}" href="interests.html">Interests</a>
+		</li>
+		<li class="nav-item">
+		    <a class="nav-link {% if page.url contains 'software' %}active{% endif %}" href="software.html">Software</a>
+		</li>
+		<li class="nav-item">
+		    <a class="nav-link {% if page.url contains 'work' %}active{% endif %}" href="work.html">Work</a>
+		</li>
+	    </ul>
+
+	    <!-- Right-aligned single link -->
+	    <ul class="navbar-nav ms-auto">
+		<li class="nav-item">
+		    <a class="nav-link {% if page.url contains 'honig' %}active{% endif %}" href="..">Honig.net</a>
+		</li>
+	    </ul>
+	</div>
+    </div>
+</nav>

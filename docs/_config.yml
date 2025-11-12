@@ -4,3 +4,15 @@ email: "jch@honig.net"
 markdown: kramdown
 kramdown:
   input: GFM
+
+defaults:
+  - scope:
+      path: ""          # all pages
+      type: pages
+    values:
+      layout: default
+  - scope:
+      path: "jch"       # subdirectory
+      type: pages
+    values:
+      navbar: "navbar-jch.html"
