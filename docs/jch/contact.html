@@ -4,211 +4,86 @@ title: Jeffrey C Honig
 permalink: /jch/contact.html
 ---
 <style>
+ .markdown-list {
+     list-style: none;
+     padding-left: 0;
+     margin: 0;
+ }
 
-  /* ==========================
-     Contact Page Card Overrides
-     ========================== */
+ .markdown-list li {
+     margin-bottom: 0.5em;
+     display: flex;
+     align-items: flex-start;
+     gap: 0.5em;
+ }
 
-  /* Base card body */
-  .card-forest.card-forest-light-border .card-body {
-    color: {{ forest_text }} !important;
-    /* overlay removed */
-    position: relative;
-  }
-  .card-forest.card-forest-light-border .card-body::before {
-    display: none !important;
-  }
+ .markdown-list li strong {
+     flex-shrink: 0; /* ensures icon doesn’t wrap */
+ }
 
-  /* Links in card body */
-  .card-forest.card-forest-light-border .card-body a {
-    color: {{ forest_text }};
-    text-decoration: underline;
-  }
-  .card-forest.card-forest-light-border .card-body a:hover {
-    color: {{ forest_hover }};
-  }
+ .markdown-list li a {
+     text-decoration: none;
+     color: inherit;
+ }
 
-  /* Card border */
-  .card-forest.card-forest-light-border {
-    border-width: 1px !important;
-    border-color: {{ forest_mid }};
-  }
-
-  /* Alternate header gradients */
-  .card-forest.card-forest-light-border:nth-of-type(odd) .card-header {
-    background: linear-gradient(180deg, var(--forest-dark) 0%, var(--forest-mid) 100%) !important;
-    color: {{ forest_text_light }} !important;
-  }
-  .card-forest.card-forest-light-border:nth-of-type(even) .card-header {
-    background: linear-gradient(180deg, var(--forest-mid) 0%, var(--forest-deep) 100%) !important;
-    color: {{ forest_text_light }} !important;
-  }
-
-  /* Alternate card body backgrounds */
-  .card-forest.card-forest-light-border:nth-of-type(odd) .card-body {
-    background: #f4faf2 !important;  /* light greenish */
-  }
-  .card-forest.card-forest-light-border:nth-of-type(even) .card-body {
-    background: #e8f5e4 !important;  /* slightly darker green */
-  }
-
-  /* Card header text */
-  .card-forest.card-forest-light-border .card-header {
-    font-weight: 600;
-    cursor: default;
-  }
-
-  /* Make list items match the card body background */
-  .card-forest.card-forest-light-border .list-group-item {
-    background: transparent !important;
-    color: inherit !important;  /* ensures text color matches body */
-  }
-
-  /* Optional: remove borders if any */
-  .card-forest.card-forest-light-border .list-group-item.border-0 {
-    border: none !important;
-  }
+ .markdown-list li a:hover {
+     text-decoration: underline;
+ }
 </style>
 
-<!-- Address & Phone -->
-<div class="card card-forest card-forest-light-border mb-4 shadow-sm">
-  <div class="card-header card-forest text-center fw-bold" style="cursor: default;">
-    Contact Me
+<section class="content-section container" id="contacts">
+  <div class="container text-center mb-4">
+    <h2 class="mb-2">Contact Me</h2>
   </div>
-  <div class="card-body">
-    <p class="mb-1">📬 PO Box 708<br>Trumansburg, NY 14886‑0708 USA</p>
-    <p class="mb-1">
-      <a href="tel:+16072168613" class="text-decoration-none">
-        <i class="bi bi-telephone-fill"></i> +1 607 216 8613
-      </a>
-    </p>
-    <p>
-      <a href="mailto:jch@honig.net" class="text-decoration-none">
-        <i class="bi bi-envelope-fill"></i> jch@honig.net
-      </a>
-    </p>
-  </div>
-</div>
 
-<!-- Social Sites -->
-<div class="card card-forest card-forest-light-border mb-4 shadow-sm">
-  <div class="card-header card-forest text-center fw-bold" style="cursor: default;">
-    Social Sites
-  </div>
-  <div class="card-body">
-    <p>You can find me at a number of social and networking sites:</p>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item border-0">
-        <i class="bi bi-facebook"></i>
-        <a href="https://www.facebook.com/jchonig" target="_blank" rel="noopener" class="text-decoration-none">
-          Facebook <i class="bi bi-box-arrow-up-right"></i>
-        </a> – It’s where the olds hang out, right?
-      </li>
-      <li class="list-group-item border-0">
-        <i class="bi bi-chat-square-text-fill"></i>
-        <a href="https://microblog.jchonig.net" target="_blank" rel="noopener" class="text-decoration-none">
-          microblog <i class="bi bi-box-arrow-up-right"></i>
-        </a> – Blog posts
-      </li>
-      <li class="list-group-item border-0">
-        <i class="bi bi-journal-code"></i>
-        <a href="https://twit.social/@jchonig" target="_blank" rel="noopener" class="text-decoration-none">
-          Fetaverse <i class="bi bi-box-arrow-up-right"></i>
-        </a> – Replicated from microblog
-      </li>
-      <li class="list-group-item border-0">
-        <i class="bi bi-cloud-fill"></i>
-        <a href="https://bsky.app/profile/jch.honig.net" target="_blank" rel="noopener" class="text-decoration-none">
-          BlueSky <i class="bi bi-box-arrow-up-right"></i>
-        </a> – Replicated from microblog
-      </li>
-      <li class="list-group-item border-0">
-        <i class="bi bi-linkedin"></i>
-        <a href="https://www.linkedin.com/in/jchonig" target="_blank" rel="noopener" class="text-decoration-none">
-          LinkedIn <i class="bi bi-box-arrow-up-right"></i>
-        </a> – Business networking
-      </li>
-      <li class="list-group-item border-0">
-        <i class="bi bi-bicycle"></i>
-        <a href="https://www.strava.com/athletes/3101492" target="_blank" rel="noopener" class="text-decoration-none">
-          Strava <i class="bi bi-box-arrow-up-right"></i>
-        </a> – Fitness activity
-      </li>
-      <li class="list-group-item border-0">
-        <i class="bi bi-camera-fill"></i>
-        <a href="https://www.flickr.com/photos/jchonig" target="_blank" rel="noopener" class="text-decoration-none">
-          Flickr <i class="bi bi-box-arrow-up-right"></i>
-        </a> – Most of my photos
-      </li>
-      <li class="list-group-item border-0">
-        <i class="bi bi-newspaper"></i>
-        <a href="https://medium.com/@jc_honig" target="_blank" rel="noopener" class="text-decoration-none">
-          Medium <i class="bi bi-box-arrow-up-right"></i>
-        </a> – Blog posts (stale)
-      </li>
-      <li class="list-group-item border-0">
-        <i class="bi bi-person-circle"></i>
-        <a href="https://s.gravatar.com/avatar/b25e2ae1f07ec30647f346df81d2d841?s=80" target="_blank" rel="noopener" class="text-decoration-none">
-          My Gravatar <i class="bi bi-box-arrow-up-right"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
-</div>
+  {% for contact in site.data.jch_contacts %}
+  <div class="card card-forest mx-5 my-3 shadow-sm">
+    {% if contact.Title %}
+    <!-- Header toggles collapse -->
+    <div class="card-header card-forest
+		text-center fw-bold d-flex justify-content-between align-items-center"
+         data-bs-toggle="collapse"
+         data-bs-target="#collapse-{{ forloop.index }}"
+         aria-expanded="false"
+         aria-controls="collapse-{{ forloop.index }}"
+         style="cursor: pointer;">
+      <span>{{ contact.Title }}</span>
+      <i class="bi bi-caret-down-fill" id="caret-{{ forloop.index }}"></i>
+    </div>
+    {% endif %}
 
-<!-- Chat -->
-<div class="card card-forest card-forest-light-border mb-4 shadow-sm">
-  <div class="card-header card-forest text-center fw-bold" style="cursor: default;">
-    Chat
+    <div class="collapse" id="collapse-{{ forloop.index }}">
+      <div class="card-body text-body p-4"
+           {% if contact.Background %}
+           style="
+             background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+                         url('{{ 'jch/images/' | relative_url }}{{ contact.Background }}');
+             background-size: cover;
+             background-position: center;
+           "
+           {% endif %}
+      >
+        {{ contact.Description | markdownify }}
+      </div>
+    </div>
   </div>
-  <div class="card-body">
-    <p>You can direct message me at one of these services:</p>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item border-0">
-        <i class="bi bi-phone-fill"></i> SMS:
-        <a href="sms:+16072168613" class="text-decoration-none">+1 607 216 8613</a>
-      </li>
-      <li class="list-group-item border-0">
-        <i class="bi bi-terminal-fill"></i> IRC: jchonig @ freenode
-      </li>
-      <li class="list-group-item border-0">
-        <i class="bi bi-shield-lock-fill"></i> Signal:
-        <a href="https://signal.me/#p/+16072168613" target="_blank" rel="noopener" class="text-decoration-none">
-          +1 607 216 8613 <i class="bi bi-box-arrow-up-right"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
-</div>
+  {% endfor %}
+</section>
 
-<!-- Secure Communications -->
-<div class="card card-forest card-forest-light-border shadow-sm">
-  <div class="card-header card-forest text-center fw-bold" style="cursor: default;">
-    Secure Communications
-  </div>
-  <div class="card-body">
-    <p>If you need to communicate with me securely use one of the following methods:</p>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item border-0">
-        Email via <i class="bi bi-envelope-open-fill"></i>
-        <a href="https://proton.me" target="_blank">
-          ProtonMail <i class="bi bi-box-arrow-up-right"></i>:
-        </a>
-        &nbsp;<a href="mailto:jchonig@pm.me" class="text-decoration-none">jchonig@pm.me</a>
-      </li>
-      <li class="list-group-item border-0">
-        Send a message via <i class="bi bi-shield-check"></i>
-        <a href="https://signal.org/download/" target="_blank">
-          Signal Private Messenger <i class="bi bi-box-arrow-up-right"></i>:
-        </a>
-        &nbsp;<a href="https://signal.me/#p/+16072168613" target="_blank" rel="noopener" class="text-decoration-none">
-          +1 607 216 8613 <i class="bi bi-box-arrow-up-right"></i>
-        </a>
-      </li>
-      <li class="list-group-item border-0">
-        <i class="bi bi-key-fill"></i> My PGP key fingerprint:
-        <code>96C1 48E8 B0E5 F741 A90E D04B BE5F FC5E 5271 8CE</code>
-      </li>
-    </ul>
-  </div>
-</div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  {% for contact in site.data.jch_contacts %}
+  var collapseEl{{ forloop.index }} = document.getElementById('collapse-{{ forloop.index }}');
+  var caretEl{{ forloop.index }} = document.getElementById('caret-{{ forloop.index }}');
+
+  collapseEl{{ forloop.index }}.addEventListener('show.bs.collapse', function () {
+    caretEl{{ forloop.index }}.classList.remove('bi-caret-down-fill');
+    caretEl{{ forloop.index }}.classList.add('bi-caret-up-fill');
+  });
+  collapseEl{{ forloop.index }}.addEventListener('hide.bs.collapse', function () {
+    caretEl{{ forloop.index }}.classList.remove('bi-caret-up-fill');
+    caretEl{{ forloop.index }}.classList.add('bi-caret-down-fill');
+  });
+  {% endfor %}
+});
+</script>

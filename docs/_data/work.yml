@@ -20,7 +20,7 @@
     I started my career doing Systems Programming on an [IBM
     360/65](https://www.wikiwand.com/en/IBM_System/360_Model_65)
     at Clarkson College (now [Clarkson
-    University](http://www.clarkson.edu)) in Potsdam, NY. Systems
+    University](http://www.clarkson.edu){: .external-link}) in Potsdam, NY. Systems
     programming was what we called ystem administration those
     days. Instead of cool tools like Perl, Python and PowerShell, we
     had IBM 360 Assembly Language. Computers took up large rooms, and
@@ -33,10 +33,10 @@
     Time Sharing computing was the buzzword of the day. That's where a
     mainframe would support many interactive users editing jobs to
     submit. This was done with the
-    [ROSCOE](https://www.wikiwand.com/en/Applied_Data_Research)
+    [ROSCOE](https://www.wikiwand.com/en/Applied_Data_Research){: .external-link}
     system, which was really just another batch job that never
     finished. It controlled a lab full of
-    [ADM-3A](https://www.wikiwand.com/en/ADM-3A)
+    [ADM-3A](https://www.wikiwand.com/en/ADM-3A){: .external-link}
     terminals, most of which were not equipped with lowercase
     chips. BACK THEN ALL CAPS WAS THE NORM AND WASN'T CONSIDERED
     SHOUTING.
@@ -51,9 +51,9 @@
 
     As part of this move research was required into a new computing
     platform. The major contenders were the [IBM
-    4341](https://www.wikiwand.com/en/IBM_4300%23/IBM_4341)
+    4341](https://www.wikiwand.com/en/IBM_4300%23/IBM_4341){: .external-link}
     and a [UNIVAC
-    1100](https://www.wikiwand.com/en/UNIVAC_1100/2200_series%23/1110)
+    1100](https://www.wikiwand.com/en/UNIVAC_1100/2200_series%23/1110){: .external-link}
     series. The IBM 4341 won out, primarily because of the legacy
     administrative computing systems dependent on IBM software. In the
     long run this was a better decision, the IBM computing platform
@@ -63,7 +63,7 @@
     a hypervisor like today's VMWare ESX. Under that we ran OS/VS1 to
     continue to process legacy batch jobs and provided more
     interactive computing via the [McGill University System for
-    Interactive Computing](https://www.wikiwand.com/en/MUSIC/SP) (MUSIC)
+    Interactive Computing](https://www.wikiwand.com/en/MUSIC/SP){: .external-link} (MUSIC)
     a timesharing system written in FORTRAN and designed to run under
     VM/370.
 
@@ -126,7 +126,7 @@
 
     Clarkson's first foray into the PC was the Zenith Z-100 running
     the
-    [Z-DOS](https://www.wikiwand.com/en/Z-DOS)
+    [Z-DOS](https://www.wikiwand.com/en/Z-DOS){: .external-link}
     version of MS-DOS; the school became the first college in the
     nation to distribute machines to every incoming freshman in the
     Fall of 1983. It was very similar to, but slightly different from
@@ -147,7 +147,7 @@
 
     Another big thing in the 80s was networking. Clarkson first
     connected to
-    [BITNET](https://www.wikiwand.com/en/BITNET),
+    [BITNET](https://www.wikiwand.com/en/BITNET){: .external-link},
     an educational network of mostly IBM mainframes. BITNET allowed
     e-mail and mailing lists as well as remote job submission. It even
     had support for instant messaging and functioned as an early
@@ -191,7 +191,7 @@
     My experience with the Internet, Unix and software development
     landed me a job at the Cornell University Theory Center in Ithaca,
     NY to help run phase I of the
-    [NFSNET](https://www.wikiwand.com/en/National_Science_Foundation_Network). There
+    [NFSNET](https://www.wikiwand.com/en/National_Science_Foundation_Network){: .external-link}. There
     I became the lead programmer on the Gated project. Gated was an
     Open Source routing daemon used on the Unix hosts that formed the
     NSFNET and by several routing manufacturers.
@@ -200,7 +200,7 @@
     routing protocol to the existing BSD routing daemon which
     supported only the RIP protocol. I turned it into a framework for
     efficiently implementing and testing routing protocols. When
-    Cornell passed the project to [Merit](https:///www.merit.edu),
+    Cornell passed the project to [Merit](https:///www.merit.edu){: .external-link},
     Gated had support for RIP, OSPF, EGP, BGP, and Router Discovery.
 
     During this time I learned some concepts that are still relevant
@@ -213,7 +213,7 @@
     Project Management was pretty foreign to me.
 
     I also participated in the [Internet Engineering Task
-    Force](https://www.ietf.org) (IETF) on the design of several
+    Force](https://www.ietf.org){: .external-link} (IETF) on the design of several
     routing protocols, including OSPF and RIP v2. Gated was an
     excellent platform for prototyping new routing protocols and had
     one of the first implementations of the BGP protocol.
@@ -261,7 +261,7 @@
 - Title: Wind River Systems, Inc
   Description: |
     BSDi was acquired by [Wind River Systems,
-    Inc](https://www.windriver.com), an
+    Inc](https://www.windriver.com){: .external-link}, an
     embedded operating systems company whose primary product is
     VxWorks, a real-time OS. Wind River realized that they needed to
     expand their portfolio with a general purpose embedded Operating
@@ -299,11 +299,11 @@
 
     As an Engineering Manager I learned to dislike the [Waterfall
     model of Project
-    Management](https://www.wikiwand.com/en/Waterfall_model). The
+    Management](https://www.wikiwand.com/en/Waterfall_model){: .external-link}. The
     up-front planning of the Waterfall model does not adapt well to
     complicated software projects. The Wind River Linux team was one
     of the first to embrace the [Agile model of Project
-    Management](https://www.wikiwand.com/en/Agile_software_development). I
+    Management](https://www.wikiwand.com/en/Agile_software_development){: .external-link}. I
     helped lead our transition and we managed to apply it quite
     effectively despite having widely distributed teams. When I left
     Wind River I was managing a few Agile teams as well as the roll-up
@@ -377,12 +377,12 @@
 
 - Title: AppNexus / Xandr / Microsoft
   Description: |
-    In May of 2017 I joined [AppNexus, Inc](https://en.wikipedia.org/wiki/AppNexus) as a Senior Systems Architect supporting disagregated storage in our private cloud. Configuration Management with puppet and scripting with python and REST APIs were supplemented by a central SQL configuration database.
+    In May of 2017 I joined [AppNexus, Inc](https://en.wikipedia.org/wiki/AppNexus){: .external-link} as a Senior Systems Architect supporting disagregated storage in our private cloud. Configuration Management with puppet and scripting with python and REST APIs were supplemented by a central SQL configuration database.
 
     In 2018 AT&T acquired AppNexus and merged it with AdCo to form
-    [Xandr](https://en.wikipedia.org/wiki/Xandr).
+    [Xandr](https://en.wikipedia.org/wiki/Xandr){: .external-link}.
 
-    In December 2021, [Microsoft](www.microsoft.com) announced its intention to acquire Xandr from AT&T. This acquisition was completed in June of 2022.
+    In December 2021, [Microsoft](www.microsoft.com){: .external-link} announced its intention to acquire Xandr from AT&T. This acquisition was completed in June of 2022.
 
 - Title: Retirement
   Description: |

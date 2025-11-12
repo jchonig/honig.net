@@ -1,3 +1,6 @@
 
 author: "Jeffrey C Honig"
 email: "jch@honig.net"
+markdown: kramdown
+kramdown:
+  input: GFM

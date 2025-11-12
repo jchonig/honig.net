@@ -23,5 +23,20 @@
   {% include footer.html %}
 
   <script src="../js/bootstrap.bundle.min.js"></script>
+
+  <script>
+   document.addEventListener('DOMContentLoaded', function () {
+       document.querySelectorAll('a.external-link').forEach(function(a){
+	   try {
+	       // only add for absolute URLs (optional)
+	       if (a.hostname && a.hostname !== location.hostname) {
+		   a.setAttribute('target','_blank');
+		   a.setAttribute('rel','noopener noreferrer');
+	       }
+	   } catch(e){ /* defensive */ }
+       });
+   });
+  </script>
+
 </body>
 </html>
