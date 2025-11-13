@@ -1,0 +1,32 @@
+---
+layout: default
+title: Honig.net
+---
+<main class="container my-5">
+
+    <!-- Hero / Title with background image and forest border -->
+    <section class="position-relative text-center mb-5">
+	<div class="hero-container">
+	    <div class="hero-bg"
+		 {% if page.background %}
+		 style="background-image: url({{ page.background }});"
+		 {% endif %}>
+		<div class="hero-overlay">
+		    <h1 class="display-4 fw-bold">{{ page.title }}</h1>
+		</div>
+	    </div>
+	</div>
+    </section>
+
+    <!-- Main content cards -->
+    <div class="home-card">
+	<p>
+	    You can find members of the Honig family at
+	</p>
+	<ul>
+	    <li> <a class="link" href="jch">Jeffrey Honig</a></li>
+	    <li> <a class="link external-link" href="https://www.faceboot.com/sue.honig">Sue Honig</a></li>
+	</ul>
+    </div>
+
+</main>
