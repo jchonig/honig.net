@@ -6,6 +6,9 @@ on:
     - cron: "0 2 * * *"
   workflow_dispatch: # Allows manual triggering
 
+permissions:
+  contents: write # Allows committing images
+
 jobs:
   update-flickr-previews:
     runs-on: ubuntu-latest
@@ -32,7 +35,7 @@ jobs:
       # Run Flickr previews script
       - name: Run flickr_previews
         run: |
-          python git-hooks/flickr_previews --root-dir docs --image-dir images/flickr-previews
+          python git-hooks/flickr_previews -v --root-dir docs --image-dir images/flickr-previews
 
       # Commit and push changes if any
       - name: Commit updated images
