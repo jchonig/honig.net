@@ -16,7 +16,6 @@ RUN \
     echo "*** Build jekyl ***" && \
     bundle config local.github-pages /src/gh/pages-gem && \
     bundle install --gemfile=/src/gh/pages-gem/Gemfile && \
-    echo "*** Add runtime dependencies ***" && \
     echo "*** Clean up build dependencies ***" && \
     apk del .build_deps
 
