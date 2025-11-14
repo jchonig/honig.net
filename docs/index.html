@@ -2,9 +2,23 @@
 layout: default
 title: Honig.net
 ---
+
 <main class="container my-5">
 
-    <!-- Hero / Title with background image and forest border -->
+    <!-- ================================
+	 Page Header
+	 ================================ -->
+    <header class="page-header {% unless page.header_image %}no-image{% endunless %}">
+	{% if page.header_image %}
+	<img src="{{ page.header_image }}"
+	     {% if page.header_image_alt %}
+	     alt="{{ page.header_image_alt }}"
+	     {% endif %}>
+	{% endif %}
+	<h1>{{ page.title }}</h1>
+    </header>
+
+    <!-- Hero / Title with background image and forest border
     <section class="position-relative text-center mb-5">
 	<div class="hero-container">
 	    <div class="hero-bg"
@@ -17,6 +31,7 @@ title: Honig.net
 	    </div>
 	</div>
     </section>
+    -->
 
     <!-- Main content cards -->
     <div class="home-card">

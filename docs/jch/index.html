@@ -2,12 +2,24 @@
 layout: default
 title: Jeffrey C Honig
 permalink: /jch/
-background: images/245GLT.jpg
+header_image: images/245GLT.jpg
+header_image_alt: Image of a Silver 1981 Volvo 245 GLT
 ---
 
-<main class="container my-5">
+<!-- ================================
+     Page Header
+     ================================ -->
+<header class="page-header">
+    {% if page.header_image %}
+    <img src="{{ page.header_image }}"
+	 {% if page.header_image_alt %}
+	 alt="{{ page.header_image_alt }}"
+	 {% endif %}>
+    {% endif %}
+    <h1>{{ page.title }}</h1>
+</header>
 
-  <!-- Hero / Title with background image and forest border -->
+<!-- Hero / Title with background image and forest border
   <section class="position-relative text-center mb-5">
       <div class="hero-container">
 	  <div class="hero-bg"
@@ -20,6 +32,7 @@ background: images/245GLT.jpg
 	  </div>
       </div>
   </section>
+  -->
 
   <!-- Main content cards -->
   <div class="home-card">
