@@ -45,11 +45,17 @@
   Description: |
     I mainly use Gmail because it has great SPAM filtering and makes
     my mail available on all my devices.  For secure e-mail I use
-    [Proton Mail](https://proton.me).  I have been a heavy user of
-    the [nmh](https://www.nongnu.org/nmh/) mail system for decades and
-    a developer on the [mh-e](https://sourceforge.net/projects/mh-e/)
-    front-end for nmh in Emacs.  For large volumes of mail (i.e. at
-    work), MH-E was much more efficient.
+    [Proton Mail](https://proton.me).
+
+    I have been a heavy user of the [nmh](https://www.nongnu.org/nmh/)
+    mail system for decades and a developer on the
+    [mh-e](https://sourceforge.net/projects/mh-e/) front-end for nmh
+    in Emacs.  For large volumes of mail (i.e. at work), MH-E was much
+    more efficient.
+
+    Unfortuneatly employers after Wind River thought security was more
+    important than productivity and we were forced into a closed
+    ecosystem.
 
     At home I use postfix configured to send e-mail.  For years I used
     sendmail and wrote custom configurations but I find postfix easier
@@ -84,12 +90,18 @@
     Linux distribution to complement their VxWorks real-time offering.
     Eventually I converted all my BSD/OS systems to Linux, first
     Fedora and then Ubuntu.  At one point I had half a dozen systems
-    running Ubuntu, at the time of this writing it's only three: A
-    Ubuntu desktop (which is long due for retirement), a server (Plex,
-    Nextcloud, Gogs, backups, DNS, DHCP), a low power server (running
-    UniFi Controller, M/Monit, DNS, DHCP).
+    running Ubuntu, at the time of this writing it's a couple.  A
+    server (Plex, Nextcloud, Gitlab, backups, DNS, DHCP), a low power
+    server (running UniFi Controller, M/Monit, DNS, DHCP) and another
+    lower power server running at our house in Florida (because, that
+    is what you do).
 
-    My primary UI these days is macOS, primarily on an M2 Macbook Pro.
+    At AppNexus/Xandr/Microsoft I was part of the architecture team
+    for the internal cloud, consisting of more than 13,000 servers and
+    VMs.  All running Ubuntu and managed with Puppet.
+
+    My primary UI these days is macOS, primarily on Apple Silicon Mac
+    Book Pros.
 
 - Title: Home Automation
   Background: home_automation_bg.jpg
@@ -123,24 +135,20 @@
     over to Github where other folks can contribute.  I personally use
     it all the time.
 
-    I would really love to have some good occupancy detection, maybe
-    with BTLE (via my BTLE fitness tracker).
-
     I currently have a [Home
-    Assistant](https://www.home-assistant.io/) installation running in
-    a Docker container on my server.  This is not an idea way to
-    install Home Assistant and I am going to move it to a Raspberry Pi
-    (w/external SATA SSD) soon.
+    Assistant](https://www.home-assistant.io/) installation running on
+    a Raspberry Pi 5 powered by PoE with an NVMe disk.  This runs a
+    network of dozens of Z-Wave devices, from thermostats to motion
+    sensors to switches.  With a significant numbers of automations
+    and integrations.
 
-    I got very frustrated with the HA Z-Wave installation because
-    every time Home Assitant was restarted the Z-Wave controller
-    function was restarted.  So I bought an external Z-Wave
-    controller, the Vera Plus.  The downside of this is that the Home
-    Assistant integration is broken with respect to thermostats that
-    have different heating and cooling setpoints.  When I migrate my
-    openzwave installation to a Raspberry Pi I'll start using the beta
-    version of openzwave which runs as a separate process and
-    communicates with Home Assistant via MQTT.
+    I'm soon to convert to a Nabu Casa ZWA-2 controller to improve
+    reliability.
+
+    I find motion sensors annoying.  I already have one Aquara
+    presense sensor installed and a couple more waiting to be
+    installed.  I also have a few Apollo automation ESP32 based
+    sensors I want to play with.
 
 - Title: IP Telphony
   Background: asterisk_bg.jpg
@@ -152,12 +160,13 @@
     Then IP Telephony happened and I learned about Asterisk.  I've
     went through several iterations of ATA adapters and service
     providers.  I finally settled on an Obihai Obi202 with Google
-    Voice.  This is currently not functioning as my Asterisk
-    installation went stale.  I plan to install FreePBX on a Raspberry
-    Pi soon.
+    Voice.  This configuration went stale and I lost intereest.
 
     In the meantime, I just use Google Voice on whatever device is
     near me.
+
+    Interesttingly, when getting into Ham Radio I found that Allstar
+    nodes are based on Asterisk. What goes around comes around.
 
 - Title: PiAware
   Background: piaware_bg.png
